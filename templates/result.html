@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>youtube downloader</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/mainpage.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+</head>
+
+<body class="body">
+    <form method="post">
+        <div class="container">
+            <div class="row height d-flex justify-content-center align-items-center">
+                <div class="list-group">
+                    <h1 class="h1">youtube downloader</h1>
+                    <div class="input-group">
+                        <input class="form-control" type="url" name="youtube_url" id="youtube_url" required>
+                        <div class="input-group-append">
+                            <input class="btn btn-primary mb-2" type="submit" value="Search">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="container">
+        <div class="row height justify-content-md-center">
+            <div class="col col-lg">
+                <img class="rounded mx-auto d-block" src="{{thumbnail}}" alt="">
+            </div>
+            <div class="col col-lg-7">
+                <h4 class="h4">Name: {{video_title}}</h4>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="container">
+        <div class="row">
+            <div class="works-item col-md-12 col-xs-12">
+                <div class="row">
+                    <div class="works-image col-xs-6">
+                        <img class="rounded" src="{{thumbnail}}" alt="">
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="item-info col-xs-6">
+                        <h4 class="item-name">Some Title here</h4>
+                        <p class="item-type">Description should be here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div class="container">
+        <div class="input-group">
+            <img class="img-fluid rounded" src="{{thumbnail}}" alt="">
+            <h2>Name: Hello</h2>
+        </div>
+    </div> -->
+    <div class="container">
+        <h2>Video</h2>
+        <table class="table table-borderless">
+            <tr>
+                <th scope="col">Quality</th>
+                <th scope="col">Format</th>
+                <th scope="col">Download Link</th>
+            </tr>
+            {%for video in video_dict%}
+            <tr>
+                <th>{{video['format_note']}}</th>
+                <th>{{video['video_ext']}}</th>
+                <th><a class="btn btn-danger" href="{{video['url']}}">Download</a></th>
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+    <div class="container">
+        <h2>Audio</h2>
+        <table class="table table-borderless">
+            <tr>
+                <th scope="col">Quality</th>
+                <th scope="col">Format</th>
+                <th scope="col">Download Link</th>
+            </tr>
+            <!-- For loop logic of jinja template -->
+            {%for audio in audio_dict%}
+            <tr>
+                <th>{{audio['format_note']}}</th>
+                <th>{{audio['audio_ext']}}</th>
+                <th><a class="btn btn-danger" href="{{audio['url']}}}" download>Download</a></th>
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+    <footer class="flex-shrink-0 py-4 bg-dark text-white-50">
+        <div class="container text-center">
+            Made <i style="color: #dc3545;" class="bi bi-heart-fill"></i> with by <a style="font-weight: 900;"
+                href="https://github.com/abhint">Abhijith</a>
+        </div>
+
+    </footer>
+</body>
+
+</html>
