@@ -61,3 +61,6 @@ Join the [News channel](https://telegram.me/AbhijithNT). Here we will post relea
 ## License
 
 The youtube-downloader is licensed under the [MIT](https://github.com/abhint/youtube-downloader/blob/main/LICENSE) license.
+## Screenshot
+![screenshot youtube-downloader](https://github.com/abhint/youtube-downloader/blob/main/screenshot/youtube-downloader.png?raw=true)
+
