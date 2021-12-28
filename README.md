@@ -3,7 +3,7 @@
   
 ## Getting started
  
-### [View screenshot](https://github.com/abhint/youtube-downloade#screenshot)
+### [View screenshot](https://github.com/abhint/youtube-downloader#screenshot)
 
 - **Installation**
 
