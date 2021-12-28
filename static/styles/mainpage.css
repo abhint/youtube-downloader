@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=B612+Mono&family=B612:wght@700&display=swap");
+
+.body {
+  font-family: "B612 Mono", monospace;
+  font-weight: 400;
+  background-color: #212529;
+  color: #fff;
+}
+
+table {
+  text-align: center;
+}
+th {
+  color: #fff;
+}
+img {
+  height: 300px;
+  width: 400px;
+}
+.row {
+  display: flex;
+}
+
+.height {
+  height: 100vh;
+}
+
+.search {
+  position: relative;
+  box-shadow: 0 0 40px rgba(51, 51, 51, 0.1);
+}
+
+.search input {
+  height: 60px;
+  text-indent: 25px;
+  border: 2px solid #d6d4d4;
+}
+
+.search input:focus {
+  box-shadow: none;
+  border: 2px solid blue;
+}
