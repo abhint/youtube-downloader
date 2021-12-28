@@ -56,7 +56,7 @@ See also the list of [contributors](https://github.com/abhint/youtube-downloader
 
 ## Telegram Channel
 
-Join the [News channel](https://telegram.me/AbhijitNT). Here we will post releases and updates.
+Join the [News channel](https://telegram.me/AbhijithNT). Here we will post releases and updates.
 
 ## License
 
