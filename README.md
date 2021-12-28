@@ -1,6 +1,9 @@
 # <p align="center">Youtube Downloader
-
+  
+  
 ## Getting started
+ 
+### [View screenshot](https://github.com/abhint/youtube-downloader/blob/main/README.md#screenshot)
 
 - **Installation**
 
