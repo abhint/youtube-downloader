@@ -1,4 +1,4 @@
-import json
+
 import yt_dlp
 
 
@@ -86,7 +86,7 @@ def get_youtube_extract(url: str):
 
     # ℹ️ See the public functions in yt_dlp.YoutubeDL for for other available functions.
     # Eg: "ydl.download", "ydl.download_with_info_file"
-    f = open('result.json', 'a')
+
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         ydl.add_post_processor(MyCustomPP())
         info = ydl.extract_info(url, download=False)
