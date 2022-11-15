@@ -1,6 +1,6 @@
 
 import yt_dlp
-
+from hurry.filesize import size
 
 # ℹ️ See the docstring of yt_dlp.postprocessor.common.PostProcessor
 class MyCustomPP(yt_dlp.postprocessor.PostProcessor):
@@ -20,25 +20,31 @@ def user_sanitize_info(info):
     }
     for formats in info['formats']:
         if 'none' in formats['video_ext'] and 'none' != formats['audio_ext']:
+            file_size_sanitize = formats['filesize'] if formats['filesize'] else 0
             user_dict['audio_formats'].append(
                 {
                     'format_name': formats['format'],
                     'url': formats['url'],
                     'audio_ext': formats['audio_ext'],
-                    'format_note': formats['format_note']
+                    'format_note': formats['format_note'],
+                    'file_size': size(file_size_sanitize)
 
                 }
             )
-        if 'none' in formats['audio_ext'] and 'none' != formats['video_ext']:
+        if formats['video_ext'] != 'none':
+            file_size_sanitize = formats['filesize'] if formats['filesize'] else 0
             user_dict['video_formats'].append(
                 {
                     'format_name': formats['format'],
                     'url': formats['url'],
                     'video_ext': formats['video_ext'],
                     'resolution': formats['resolution'],
-                    'format_note': formats['format_note']
+                    'format_note': formats['format_note'],
+                    'audio':  'Yes' if formats['audio_ext'] != 'none' else "No",
+                    'file_size': size(file_size_sanitize)
                 }
             )
+    print(user_dict)
     return user_dict
 
 
