@@ -70,13 +70,17 @@
             <tr>
                 <th scope="col">Quality</th>
                 <th scope="col">Format</th>
+                <th scope="col">Audio</th>
+                <th scope="col">File Size</th>
                 <th scope="col">Download Link</th>
             </tr>
             {%for video in video_dict%}
             <tr>
                 <th>{{video['format_note']}}</th>
                 <th>{{video['video_ext']}}</th>
-                <th><a class="btn btn-danger" href="{{video['url']}}">Download</a></th>
+                <th>{{video['audio']}}</th>
+                <th>{{video['file_size']}}</th>
+                <th><a class="btn btn-danger" href="{{video['url']}}" download>Download</a></th>
             </tr>
             {%endfor%}
         </table>
@@ -87,6 +91,7 @@
             <tr>
                 <th scope="col">Quality</th>
                 <th scope="col">Format</th>
+                <th scope="col">File Size</th>
                 <th scope="col">Download Link</th>
             </tr>
             <!-- For loop logic of jinja template -->
@@ -94,6 +99,7 @@
             <tr>
                 <th>{{audio['format_note']}}</th>
                 <th>{{audio['audio_ext']}}</th>
+                <th>{{audio['file_size']}}</th>
                 <th><a class="btn btn-danger" href="{{audio['url']}}}" download>Download</a></th>
             </tr>
             {%endfor%}
